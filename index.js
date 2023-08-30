@@ -1,4 +1,6 @@
 (()=>{
+    let yOffset = 0;
+
     const sceneInfo = [
         {
             type:'sticky',
@@ -41,7 +43,15 @@
         }
         console.log(sceneInfo);
     }
+    const scrollLope =() =>{
+
+    }
 
     window.addEventListener('resize',setLayout);
+    window.addEventListener('scroll',()=>{
+        yOffset = window.scrollY;
+        scrollLope();
+    })
+
     setLayout();
 })();
