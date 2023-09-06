@@ -19,6 +19,7 @@ p {
     position:absolute;
     top: 0;
     left: 0;
+    z-index: 10;
     width: 100%;
     height:44px;
     padding:0 1rem;
@@ -28,6 +29,7 @@ p {
     position:absolute;
     top: 45px;
     left: 0;
+    z-index: 11;
     width: 100%;
     height:52px;
     padding:0 1rem;
@@ -70,7 +72,6 @@ a {
 }
 
 .scroll-section {
-    border: 3px solid red;
     padding-top:50vh;
 }
 
@@ -83,6 +84,8 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    top:35vh;
+    margin: 5px 0;
     height:3em;
     font-size: 2.5rem;
     opacity: 0;
@@ -130,6 +133,16 @@ a {
     background: rgb(29,29,31);
 }
 
+#scroll-section-2 .b{
+    top:10%;
+    left: 40%;
+}
+
+#scroll-section-2 .c{
+    top:15%;
+    left: 45%;
+}
+
 .mid-message {
     max-width: 1000px;
     margin: 0 auto;
@@ -162,7 +175,6 @@ a {
 .sticky-elem {
     display: none;
     position: fixed;
-    top: 0;
     left: 0;
     width: 100%;
 }
@@ -174,44 +186,54 @@ a {
     display: block;
 }
 
+.sticky-elem-canvas {
+    top:0;
+    height:100%;
+}
+
+.sticky-elem-canvas canvas {
+    position: absolute;
+    top:50%;
+    left: 50%;
+}
 @media (min-width: 1024px) {
     #scroll-section-0 h1 {
         font-size: 9vw;
     }
-
     .main-message {
         font-size: 4vw;
     }
-
     .description {
+        padding: 0;
         font-size: 2rem;
     }
-
     .description strong {
         font-size: 6rem;
     }
-
     #scroll-section-2 .main-message {
         font-size: 6vw;
     }
-
     .main-message small {
         font-size: 1.5vw;
     }
-
-    .description{
-        font-size: 2rem;
+    .sticky-elem.desc-message {
+        width: 20%;
     }
-
-    #scroll-section-2 .main-message {
-        font-size: 6vw;
+    #scroll-section-2 .b {
+        top: 20%;
+        left: 53%;
     }
-
+    #scroll-section-2 .c {
+        left: 55%;
+    }
     .mid-message {
+        width: 1000px;
+        padding: 0;
         font-size: 4vw;
     }
-
     .canvas-caption {
+        margin-top: -8rem;
+        padding: 0;
         font-size: 2rem;
     }
 }
