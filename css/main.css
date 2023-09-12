@@ -162,7 +162,7 @@ a {
 
 .canvas-caption {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: -8em auto 0;
     padding: 0 1rem;
    font-size: 1.2rem;
     color :#888;
@@ -209,6 +209,11 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+}
+
+.image-blend-canvas.sticky{
+    position: fixed;
 
 }
 @media (min-width: 1024px) {
