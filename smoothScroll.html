@@ -1,0 +1,52 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        height:500vh;
+    }
+    .box {
+        position:fixed;
+        top:100px;
+        left:0;
+        width: 0;
+        height:100px;
+        background: orange;
+    }
+</style>
+<body>
+<div class="box"></div>
+<script>
+    const box = document.querySelector('.box');
+    let acc = 0.1;
+    let delayedYOffset = 0;
+    let rafId;
+    let rafState;
+
+    window.addEventListener('scroll',()=>{
+        // box.style.width = `${window.scrollY}px`
+        if(!rafState){
+            rafId =requestAnimationFrame(loop);
+            rafState = true;
+        }
+    });
+    function loop(){
+        delayedYOffset = delayedYOffset+ (pageYOffset - delayedYOffset)* acc;
+        box.style.width = `${delayedYOffset}px`;
+
+        console.log('loop')
+        rafId = requestAnimationFrame(loop);
+        if(Math.abs(pageYOffset - delayedYOffset) <1){
+            cancelAnimationFrame(rafId);
+            rafState = false;
+        }
+    }
+    loop();
+</script>
+</body>
+</html>
